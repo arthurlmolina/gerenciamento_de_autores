@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/autor")
+@RequestMapping(path = "/autor")
 public class AutorController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class AutorController {
 
     @GetMapping
     public ResponseEntity<List<AutorModel>> findAll(){
-        List request = autorService.findAll();
+        List<AutorModel> request = autorService.findAll();
         return ResponseEntity.ok().body(request);
     }
 
@@ -43,7 +43,7 @@ public class AutorController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deletar(Long id){
+    public ResponseEntity<?> deletar(@PathVariable Long id){
         autorService.deletar(id);
         return ResponseEntity.noContent().build();
     }
