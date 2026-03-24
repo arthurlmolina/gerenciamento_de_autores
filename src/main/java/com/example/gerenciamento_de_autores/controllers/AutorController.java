@@ -17,7 +17,7 @@ import java.util.Optional;
 public class AutorController {
 
     @Autowired
-    AutorService autorService;
+    private AutorService autorService;
 
     @GetMapping
     public ResponseEntity<List<AutorModel>> findAll(){

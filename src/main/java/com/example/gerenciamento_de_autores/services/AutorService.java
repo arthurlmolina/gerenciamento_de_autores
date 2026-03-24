@@ -12,7 +12,7 @@ import java.util.Optional;
 public class AutorService {
 
     @Autowired
-    AutorRepository autorRepository;
+    private AutorRepository autorRepository;
 
     public List<AutorModel> findAll(){
         return autorRepository.findAll();
